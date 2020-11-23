@@ -1,0 +1,5 @@
+name: NetherRoofProtection
+version: ${project.version}
+main: me.border.netherroofprotection.NetherRoofProtection
+api-version: 1.16
+authors: [ MrBorder ]

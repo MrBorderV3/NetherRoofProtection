@@ -1,0 +1,2 @@
+DisabledWorlds: #Worlds that their {@code Environment} is not {@code NETHER} are disabled by default
+  - "ExampleDisabledWorld"
