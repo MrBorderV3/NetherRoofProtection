@@ -17,11 +17,15 @@ public class PlayerHandler implements Listener {
     @EventHandler
     public void onPlayerMove(PlayerMoveEvent e){
         Location to = e.getTo();
+        if (to == null)
+            return;
         World world = to.getWorld();
         if (world == null)
             return;
 
-        if (!NetherRoofProtection.disabledWorlds.contains(world) && world.getEnvironment() == World.Environment.NETHER){
+        if (world.getEnvironment() == World.Environment.NETHER){
+            if (NetherRoofProtection.disabledWorlds.contains(world.getName().toLowerCase()))
+                return;
             double y = to.getY();
             if (y >= 128){
                 Player p = e.getPlayer();
